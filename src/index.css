@@ -1,13 +1,46 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+body  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family:'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--primary-color);
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1{
+  font-weight: bold;
 }
+
+p{
+  font-weight: 600;
+  
+}
+
+
+.text-3xl-custom {
+  font-size: 28px;
+}
+
+html {
+  --primary-color: #181a22;
+  --secondary-color: #fff;
+  background-image: url(/public/img/Cloudy-Light.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+}
+
+/* Variables de color si el tema es dark */
+html[data-theme="dark"] {
+  --primary-color: #fff;
+  --secondary-color: #181a22;
+  background-image: url(/public/img/Cloudy-Dark.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
