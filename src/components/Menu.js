@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 const Menu = ({ onStartGame }) => {
   const [numRounds, setNumRounds] = useState(1);
   const [checked, setChecked] = useState(localStorage.getItem("theme") === "dark" ? true : false);
-  const [logoImage, setLogoImage] = useState(checked ? '/img/logopagelight.webp' : '/img/logopagedark.webp');
   const [showAlert, setShowAlert] = useState(false);
   const [nickname, setNickname] = useState(localStorage.getItem('playerNickname') || '');
 
@@ -16,7 +15,6 @@ const Menu = ({ onStartGame }) => {
       .getElementsByTagName("HTML")[0]
       .setAttribute("data-theme", localStorage.getItem("theme"));
 
-    setLogoImage(checked ? '/img/logopagelight.webp' : '/img/logopagedark.webp');
   }, [checked]);
 
   const toggleThemeChange = () => {
@@ -55,7 +53,7 @@ const Menu = ({ onStartGame }) => {
         </label>
       </div>
       <div className="flex items-center m-8">
-        <img src={logoImage} alt="Logo del juego" className="w-300px" />
+        <img src='/img/logopagelight.webp' alt="Logo del juego" className="logopage" />
       </div>
       <div className="mb-4">
         <input
