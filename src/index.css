@@ -19,6 +19,10 @@ p{
   
 }
 
+.logopage{
+  max-width: 300px;
+  height: auto;
+}
 
 .text-3xl-custom {
   font-size: 28px;
