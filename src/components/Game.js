@@ -184,56 +184,49 @@ const Game = () => {
                 </button>
             </div>
         )}
-          {playerChoice && computerChoice && (
-            <div className="flex items-center">
-              <div
-                className="flex flex-col items-center transition-transform"
-              >
-                <img
-                  src={`/img/${playerChoice.image}`}
-                  alt="Elección del jugador"
-                  className="object-contain"
-                />
-                <p className="text-2xl font-bold mt-2">
-                  {playerNickname}
-                </p>
-              </div>
-              <div className="mx-8">
-                <span
-                  className={`text-3xl font-bold ${
-                    result === 'Ganaste'
-                      ? 'text-green-600'
-                      : result === 'Empate'
-                      ? 'text-yellow-500'
-                      : 'text-red-600'
-                  } grid`}
-                >
-                  {`Elegiste ${playerChoice.name}, El Bot eligió ${computerChoice.name}. `}
-                  <span
-                    className={`${
-                      result === 'Ganaste'
-                        ? 'text-green-600 text-5xl'
-                        : result === 'Empate'
-                        ? 'text-yellow-500 text-5xl'
-                        : 'text-red-600 text-5xl'
-                    }`}
-                  >
-                    {result}
-                  </span>
-                </span>
-              </div>
-              <div
-                className="flex flex-col items-center transition-transform"
-                id="bot-image"
-              >
-                <img
-                  src={`/img/${computerChoice.image}`}
-                  alt="Elección del Bot"
-                  className="object-contain"
-                />
-                <p className="text-2xl font-bold mt-2">Bot</p>
-              </div>
+        {playerChoice && computerChoice && (
+          <div className="flex flex-col items-center md:flex-row md:items-center m-7">
+            <div className="flex flex-col items-center md:transition-transform md:mr-8">
+              <img
+                src={`/img/${playerChoice.image}`}
+                alt="Elección del jugador"
+                className="object-contain"
+              />
+              <p className="text-2xl font-bold mt-2">{playerNickname}</p>
             </div>
+            <div className="m-4 md:m-0">
+              <span
+                className={`text-3xl font-bold ${
+                  result === 'Ganaste'
+                    ? 'text-green-600'
+                    : result === 'Empate'
+                    ? 'text-yellow-500'
+                    : 'text-red-600'
+                } grid`}
+              >
+                {`Elegiste ${playerChoice.name}, El Bot eligió ${computerChoice.name}. `}
+                <span
+                  className={`${
+                    result === 'Ganaste'
+                      ? 'text-green-600 text-5xl'
+                      : result === 'Empate'
+                      ? 'text-yellow-500 text-5xl'
+                      : 'text-red-600 text-5xl'
+                  }`}
+                >
+                  {result}
+                </span>
+              </span>
+            </div>
+            <div className="flex flex-col items-center md:ml-8" id="bot-image">
+              <img
+                src={`/img/${computerChoice.image}`}
+                alt="Elección del Bot"
+                className="object-contain"
+              />
+              <p className="text-2xl font-bold mt-2">Bot</p>
+            </div>
+          </div>
           )}
         </>
       )}
